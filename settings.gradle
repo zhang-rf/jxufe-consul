@@ -1,0 +1,5 @@
+rootProject.name = 'jxufe-consul'
+include 'consul-center'
+include 'consul-app1'
+include 'consul-app2'
+

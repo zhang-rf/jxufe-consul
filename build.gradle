@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE'
+    }
+}
+
+allprojects {
+    group 'cn.jxufe'
+    version '1.0-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
+        mavenCentral()
+    }
+
+    dependencies {
+        compile 'org.springframework.boot:spring-boot-starter-web'
+        compile 'com.orbitz.consul:consul-client:0.15.0'
+        compile 'com.squareup.retrofit2:retrofit:2.3.0'
+        compile 'com.squareup.retrofit2:converter-scalars:2.3.0'
+        testCompile 'org.springframework.boot:spring-boot-starter-test'
+    }
+}
